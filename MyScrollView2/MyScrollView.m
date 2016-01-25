@@ -40,14 +40,10 @@
     CGFloat movedFromOriginY = bounds.origin.y - movement.y;
 //    CGFloat maxOriginY = self.contentSize.height - bounds.size.height;
     
-    
-    
     if (fabsf(movedFromOriginX) <= self.contentSize.width && fabsf(movedFromOriginY) <= self.contentSize.height) {
         self.bounds = CGRectMake(movedFromOriginX, movedFromOriginY, self.bounds.size.width, self.bounds.size.height);
         [panGesture setTranslation:CGPointMake(minOriginX, minOriginY) inView:self];
     }
-    
-    
 }
 
 @end
