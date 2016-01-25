@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "MyScrollView.h"
 
 @interface ViewController ()
+
+@property (nonatomic) MyScrollView *scrollView;
 
 @end
 
@@ -16,7 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.scrollView = [[MyScrollView alloc] initWithFrame:self.view.bounds];
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width-100,300);
+    self.scrollView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.scrollView];
+    
+    UIView* redBox = [[UIView alloc] initWithFrame: CGRectMake(20, 20, 100, 100)];
+    redBox.backgroundColor = [UIColor redColor];
+    [self.scrollView addSubview: redBox];
+    
+    UIView* greenBox = [[UIView alloc] initWithFrame: CGRectMake(150, 150, 150, 200)];
+    greenBox.backgroundColor = [UIColor greenColor];
+    [self.scrollView addSubview: greenBox];
+    
+    UIView* blueBox = [[UIView alloc] initWithFrame: CGRectMake(40, 400, 200, 150)];
+    blueBox.backgroundColor = [UIColor blueColor];
+    [self.scrollView addSubview: blueBox];
+
+    UIView* yellowBox = [[UIView alloc] initWithFrame: CGRectMake(100, 600, 180, 150)];
+    yellowBox.backgroundColor = [UIColor yellowColor];
+    [self.scrollView addSubview: yellowBox];
+
 }
 
 - (void)didReceiveMemoryWarning {
